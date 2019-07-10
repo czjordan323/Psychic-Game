@@ -39,3 +39,21 @@ if (guessesRemaining <= 0) {
     console.log(computerPick);
 }
 
+if (computerPick === userPick) {
+    console.log("Winnnig!");
+    alert("Winning");
+    document.getElementById("winCount").innerHTML = winCount++;
+    failedAttempts = [];
+    document.getElementById("failedAttempts").innerHTML = failedAttempts;
+    randomPick = Math.floor(Math.random() * letters.length);
+    computerPick = letters[randomPick];
+    console.log(computerPick);
+    guessesRemaining = 9;
+    document.getElementById("guessesRemaining").innerHTML = 9;
+} else {
+    console.log("Try Again!");
+    document.getElementById("guessesRemaining").innerHTML = guessesRemaining--;
+    failedAttempts.push(userPick);
+    document.getElementById("failedAttempts").innerHTML = failedAttempts;
+    }
+
