@@ -1,6 +1,7 @@
 var winCount = 1;
 var lossesCount =  0;
 var guessesRemaining = 9;
+var userPick = "";
 var failedAttempts = [];
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
 ,"r","s","t","u","v","w","x","y","z"];
@@ -14,7 +15,7 @@ console.log(computerPick);
 
 
 document.onkeyup = function(event) {
-    var userPick = event.key;
+     userPick = event.key;
 
     var regex = /[a-z]/gi;
         if (!regex.test(userPick)) {
@@ -23,7 +24,7 @@ document.onkeyup = function(event) {
         else {
             console.log(userPick);
         }
-}
+
 
 if (guessesRemaining <= 0) {
     lossesCount++;
@@ -33,7 +34,7 @@ if (guessesRemaining <= 0) {
     guessesRemaining = 9;
     failedAttempts = [];
     document.getElementById("failedAttempts").innerHTML = failedAttempts;
-    document.getElementById("guessesRemaining").innerHTML = 9;
+    document.getElementById("guessCount").innerHTML = 9;
     randomPick = Math.floor(Math.random() * letters.length);
     computerPick = letters[randomPick];
     console.log(computerPick);
@@ -49,11 +50,12 @@ if (computerPick === userPick) {
     computerPick = letters[randomPick];
     console.log(computerPick);
     guessesRemaining = 9;
-    document.getElementById("guessesRemaining").innerHTML = 9;
+    document.getElementById("guessCount").innerHTML = 9;
 } else {
     console.log("Try Again!");
-    document.getElementById("guessesRemaining").innerHTML = guessesRemaining--;
+    document.getElementById("guessCount").innerHTML = guessesRemaining--;
     failedAttempts.push(userPick);
     document.getElementById("failedAttempts").innerHTML = failedAttempts;
     }
 
+}
