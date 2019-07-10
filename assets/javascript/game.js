@@ -13,3 +13,14 @@ var computerPick = letters[randomPick];
 console.log(computerPick);
 
 
+document.onkeyup = function(event) {
+    var userPick = event.key;
+
+    var regex = /[a-z]/gi;
+        if (!regex.test(userPick)) {
+            alert("Please Choose a Letter")
+        }
+        else {
+            console.log(userPick);
+        }
+}
