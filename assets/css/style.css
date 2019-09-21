@@ -1,0 +1,16 @@
+body {
+
+    background-image: url("../images/jeanGray.jpg");
+    background-size: auto;
+    background-repeat: repeat;
+    color: springgreen;
+}
+
+/* body {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+} */
